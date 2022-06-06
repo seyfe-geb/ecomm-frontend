@@ -130,7 +130,7 @@ const Register = () => {
                             <input type="text" label={'cardNumber'} name={'cardNumber'}/>
                         </div>
                         <div className="form-group">
-                            <label>CSV</label>
+                            <label>CVV</label>
                             <input type="text" label={'cardCVV'} name={'cardCVV'}/>
                         </div>
                     </div>
