@@ -8,6 +8,7 @@ import BuyerBoard from "../components/BuyerBoard";
 import SellerBoard from "../components/SellerBoard";
 import AdminBoard from "../components/AdminBoard";
 import Home from "../components/Home";
+import AddProduct from "../components/AddProduct";
 
 const PageRoutes = () => {
     return (
@@ -20,6 +21,7 @@ const PageRoutes = () => {
                 <Route path="/buyer" element={<BuyerBoard />}/>
                 <Route path="/seller" element={<SellerBoard />} />
                 <Route path="/admin" element={<AdminBoard />} />
+                <Route path="/addproduct" element={<AddProduct/>} />
             </Routes>
     );
 };
