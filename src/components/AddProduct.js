@@ -65,7 +65,7 @@ const AddProduct = () => {
                     </div>
                     <br/>
                     <div className="form-group">
-                        <button className="btn btn-primary btn-block" style={{marginLeft:'100px'}}>Sign Up</button>
+                        <button className="btn btn-primary btn-block" style={{marginLeft:'100px'}}>Add Product</button>
                     </div>
 
                 </form>

@@ -16,7 +16,7 @@ class UserService {
     }
     addProduct(productName, price, productDescription,
                 quantity, productImage, userId){
-        return axios.post(API_URL,
+        return axios.post(API_URL + 'seller/addproduct',
                             {productName, price, productDescription,
                                 quantity, productImage, userId},
                         { headers: authHeader() })
