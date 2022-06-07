@@ -16,7 +16,6 @@ class AuthService {
     }
     logout() {
         localStorage.removeItem("user");
-        localStorage.removeItem("isLoggedIn");
     }
     register(firstName, lastName, email, username, password, role,
              street, city, state, zipcode,
