@@ -9,6 +9,28 @@ label {
   margin-left: 50px;
   margin-right: 50px;
 }
+.card-container1.card {
+  min-width: 1750px !important;
+  padding: 40px 40px;
+  display:inline-block;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.card-container2.card {
+  max-width: 1000px !important;
+  padding: 40px 40px;
+  display: inline-block;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.card-container3.card {
+  min-width: 500px !important;
+  min-height: 500px !important;
+  padding: 40px 40px;
+  display: inline-block;
+  margin-left: 50px;
+  margin-right: 50px;
+}
 .card {
   background-color: #f7f7f7;
   padding: 20px 25px 30px;

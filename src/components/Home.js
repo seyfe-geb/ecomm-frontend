@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Header from "../Pages/Header";
 import UserService from "../services/user.service";
+import Products from "./Products";
 
 const Home = () => {
 
@@ -14,12 +15,13 @@ const Home = () => {
     }, [])
     return (
         <>
-            <Header/>
-            <div className="container">
-                <header className="jumbotron">
-                    <h3>{content}</h3>
-                </header>
-            </div>
+            {/*<Header/>*/}
+            {/*<div className="container">*/}
+                {/*<header className="jumbotron">*/}
+                {/*    <h3>{content}</h3>*/}
+                {/*</header>*/}
+                <Products/>
+            {/*</div>*/}
         </>
     );
 };

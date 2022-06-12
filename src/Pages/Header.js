@@ -22,12 +22,12 @@ const Header = () => {
     return (
         <>
             <nav className="navbar navbar-expand navbar-dark bg-dark">
-                <Link to={"/"} className="navbar-brand">
+                <Link to={"/products"} className="navbar-brand">
                     Ecomm
                 </Link>
                 <div className="navbar-nav mr-auto" style={{marginLeft:"100px"}}>
                     <li className="nav-item">
-                        <Link to={"/home"} className="nav-link">
+                        <Link to={"/products"} className="nav-link">
                             Home
                         </Link>
                     </li>

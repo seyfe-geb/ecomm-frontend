@@ -9,12 +9,19 @@ import SellerBoard from "../components/SellerBoard";
 import AdminBoard from "../components/AdminBoard";
 import Home from "../components/Home";
 import AddProduct from "../components/AddProduct";
+import Products from "../components/Products";
+import ProductDetails from "../components/ProductDetails";
+import Checkout from "../components/Checkout";
 
 const PageRoutes = () => {
     return (
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/home" element={<Home />} />
+                <Route path="/" element={<Products />} />
+                <Route path="/home" element={<Products />} />
+                <Route path="products" element={<Products/>}>
+                    <Route path=":id" element={<ProductDetails/>}/>
+                </Route>
+                <Route path="/productdetails" element={<ProductDetails/>}/>
                 <Route path="/login" element={<Login />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/register" element={<Register />} />
@@ -22,6 +29,7 @@ const PageRoutes = () => {
                 <Route path="/seller" element={<SellerBoard />} />
                 <Route path="/admin" element={<AdminBoard />} />
                 <Route path="/addproduct" element={<AddProduct/>} />
+                <Route path="/checkout" element={<Checkout/>}/>
             </Routes>
     );
 };

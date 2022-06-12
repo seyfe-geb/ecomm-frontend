@@ -14,12 +14,38 @@ class UserService {
     getAdminBoard() {
         return axios.get(API_URL + 'admin', { headers: authHeader() });
     }
+    getProductById(pid) {
+        return axios.get(API_URL + 'product/' + pid, { headers: authHeader() });
+    }
+
+    getAllProducts() {
+        return axios.get(API_URL + 'products');
+    }
+
     addProduct(productName, price, productDescription,
                 quantity, productImage, userId){
         return axios.post(API_URL + 'seller/addproduct',
                             {productName, price, productDescription,
                                 quantity, productImage, userId},
                         { headers: authHeader() })
+    }
+
+    newOrder(price, productId, userId){
+        return axios.post(API_URL + 'buyer/neworder',
+            {price, productId, userId},
+            { headers: authHeader() })
+    }
+
+    setSelectedProduct(pid){
+        axios.get(API_URL + 'product/' + pid, { headers: authHeader() })
+            .then(response => localStorage.setItem("product", JSON.stringify(response.data)))
+            .catch(error => console.log("Error fetchinng data!"));
+    }
+    getSelectedProduct(){
+        return JSON.parse(localStorage.getItem('product'));
+    }
+    removeProduct() {
+        localStorage.removeItem('product');
     }
 }
 export default new UserService();

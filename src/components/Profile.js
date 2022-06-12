@@ -53,10 +53,47 @@ const Profile = () => {
                     <strong>Is user an approved seller:</strong> {currentUser.approvedSeller + ''}
                 </p>
 
-                <p>
-                    <strong>Token:</strong> {currentUser.accessToken.substring(0, 20)} ...{" "}
-                    {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
-                </p>
+                <div>
+                    <h3>Address</h3>
+                    <p>
+                        <strong>Street:</strong> {currentUser.createdAt}
+                    </p>
+
+                    <p>
+                        <strong>City:</strong> {currentUser.modifiedAt}
+                    </p>
+
+                    <p>
+                        <strong>State:</strong> {currentUser.enabled + ''}
+                    </p>
+
+                    <p>
+                        <strong>Zip Code:</strong> {currentUser.approvedSeller + ''}
+                    </p>
+                </div>
+                <div>
+                    <h3>Payment Information</h3>
+                    <p>
+                        <strong>Street:</strong> {currentUser.createdAt}
+                    </p>
+
+                    <p>
+                        <strong>City:</strong> {currentUser.modifiedAt}
+                    </p>
+
+                    <p>
+                        <strong>State:</strong> {currentUser.enabled + ''}
+                    </p>
+
+                    <p>
+                        <strong>Zip Code:</strong> {currentUser.approvedSeller + ''}
+                    </p>
+                </div>
+
+                {/*<p>*/}
+                {/*    <strong>Token:</strong> {currentUser.accessToken.substring(0, 20)} ...{" "}*/}
+                {/*    {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}*/}
+                {/*</p>*/}
 
 
             </div>
