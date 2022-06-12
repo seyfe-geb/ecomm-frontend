@@ -12,18 +12,19 @@ const Checkout = (props) => {
     const currentUser = AuthService.getCurrentUser();
     const product = UserService.getSelectedProduct();
     const navigate = useNavigate();
-
+    const [quantity, setQuantity] = useState(1);
 
     const handleCheckout = (e) => {
         const newOrder = {
             price: product.price,
+            productQuantity:quantity,
             productId: product.id,
             userId: currentUser.id
         };
-        UserService.newOrder(newOrder.price, newOrder.productId, newOrder.userId)
+        UserService.newOrder(newOrder.price, newOrder.productQuantity, newOrder.productId, newOrder.userId)
             .then(() => {
                 console.log("Success");
-                navigate("/home");
+                navigate("/products");
             })
             .catch(error => console.log("Error posting data!"));
     }
@@ -40,7 +41,16 @@ const Checkout = (props) => {
                         Product Info<br/>
                         Price: {product.price}<br/>
                         Product Id : {product.id}<br/>
-                        User Id: {currentUser.id}
+                        User Id: {currentUser.id}<br/>
+                        Quantity: <input
+                                        type="number"
+                                        value={quantity}
+                                        maxLength = {2}
+                                        onChange={(e) =>
+                                            setQuantity((v) => (e.target.validity.valid ? e.target.value : v))
+                                        }
+                                        style={{maxWidth:'50px'}}
+                                    />
                     </div>
                     <img src={product.productImage} width={250} height={250} alt={product.productName}/><br/>
                     <br/>

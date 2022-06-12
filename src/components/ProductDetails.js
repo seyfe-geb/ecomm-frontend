@@ -9,6 +9,7 @@ import AuthService from "../services/auth.service";
 
 const ProductDetails = (props) => {
     const [productDetail, setProductDetail] = useState({});
+    const [checkoutButtonShow, setCheckoutButtonShow] = useState(false);
     const product = UserService.getSelectedProduct();
     const currentUser = AuthService.getCurrentUser();
     const params = useParams();
@@ -16,6 +17,11 @@ const ProductDetails = (props) => {
     const setSelectedId = useContext(SetSelectedId);
 
     useEffect(() => {
+        if(currentUser&&currentUser.roles[0]==='ROLE_BUYER'){
+            setCheckoutButtonShow(true);
+        }else{
+            setCheckoutButtonShow(false);
+        }
         if (params.id) {
             UserService.getProductById(params.id)
                 .then(response => setProductDetail(response.data))
@@ -50,7 +56,10 @@ const ProductDetails = (props) => {
                     <br/>
                 </h3>
                 <img src={productDetail.productImage} width={250} height={250} alt={productDetail.productName}/><br/>
-                <button onClick={checkoutButtonClicked}> Checkout</button>
+                {
+                    checkoutButtonShow && (<button onClick={checkoutButtonClicked}> Checkout</button>)
+                }
+
             </div>
     }
 

@@ -30,9 +30,9 @@ class UserService {
                         { headers: authHeader() })
     }
 
-    newOrder(price, productId, userId){
+    newOrder(price, quantity, productId, userId){
         return axios.post(API_URL + 'buyer/neworder',
-            {price, productId, userId},
+            {price, quantity, productId, userId},
             { headers: authHeader() })
     }
 
