@@ -22,10 +22,10 @@ const Header = () => {
     return (
         <>
             <nav className="navbar navbar-expand navbar-dark bg-dark">
-                <Link to={"/products"} className="navbar-brand">
+                <Link to={"/"} className="navbar-brand">
                     Ecomm
                 </Link>
-                <div className="navbar-nav mr-auto" style={{marginLeft:"100px"}}>
+                <div className="navbar-nav mr-auto">
                     <li className="nav-item">
                         <Link to={"/products"} className="nav-link">
                             Home
@@ -33,14 +33,19 @@ const Header = () => {
                     </li>
                     {showSellerBoard && (
                         <>
-                            <li className="nav-item" style={{marginLeft:"100px"}}>
+                            <li className="nav-item">
                                 <Link to={"/seller"} className="nav-link">
                                     Seller Board
                                 </Link>
                             </li>
-                            <li className="nav-item" style={{marginLeft:"100px"}}>
+                            <li className="nav-item">
                                 <Link to={"/addproduct"} className="nav-link">
                                     Add New Product
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to={"/sellerproducts"} className="nav-link">
+                                    All Products
                                 </Link>
                             </li>
                         </>
@@ -53,7 +58,7 @@ const Header = () => {
                         </li>
                     )}
                     {showBuyerBoard && (
-                        <li className="nav-item" style={{marginLeft:"100px"}}>
+                        <li className="nav-item" >
                             <Link to={"/buyer"} className="nav-link">
                                 Buyer Board
                             </Link>
@@ -61,13 +66,13 @@ const Header = () => {
                     )}
                 </div>
                 {currentUser ? (
-                    <div className="navbar-nav ml-auto" style={{marginLeft:"1000px"}}>
+                    <div className="navbar-nav ml-auto" >
                         <li className="nav-item">
                             <Link to={"/profile"} className="nav-link">
                                 {currentUser.username}
                             </Link>
                         </li>
-                        <li className="nav-item" style={{marginLeft:"20px"}}>
+                        <li className="nav-item" style={{marginLeft:"1000px"}}>
                             <a href="/login" className="nav-link" onClick={logOut}>
                                 LogOut
                             </a>

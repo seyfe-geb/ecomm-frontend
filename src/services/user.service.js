@@ -18,6 +18,10 @@ class UserService {
         return axios.get(API_URL + 'product/' + pid, { headers: authHeader() });
     }
 
+    getProductsBySellerId(sid) {
+        return axios.get(API_URL + 'seller/products/' + sid, { headers: authHeader() });
+    }
+
     getAllProducts() {
         return axios.get(API_URL + 'products');
     }
