@@ -65,11 +65,19 @@ const Header = () => {
                         </>
                     )}
                     {showBuyerBoard && (
-                        <li className="nav-item" >
-                            <Link to={"/buyer"} className="nav-link">
-                                Buyer Board
-                            </Link>
-                        </li>
+                        <>
+                            <li className="nav-item" >
+                                <Link to={"/buyer"} className="nav-link">
+                                    Buyer Board
+                                </Link>
+                            </li>
+                            <li className="nav-item" >
+                                <Link to={"/buyerorderdetails"} className="nav-link">
+                                    Buyer Order Details
+                                </Link>
+                            </li>
+                        </>
+
                     )}
                 </div>
                 {currentUser ? (

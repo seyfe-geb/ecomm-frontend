@@ -42,7 +42,7 @@ const Register = () => {
     return (
         <div className="col-md-12">
             <Header />
-            <div className="card card-container" style={{marginLeft:"300px"}}>
+            <div className="card card-container" style={{marginLeft:"200px"}}>
                 <img
                     src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
                     alt="profile-img"

@@ -12,6 +12,7 @@ import Products from "../components/Products";
 import ProductDetails from "../components/ProductDetails";
 import Checkout from "../components/Checkout";
 import SellerProducts from "../components/SellerProducts";
+import BuyerOrderDetails from "../components/BuyerOrderDetails";
 import AllSellers from "../components/Admin/AllSellers";
 
 const PageRoutes = () => {
@@ -35,6 +36,7 @@ const PageRoutes = () => {
 
                 <Route path="/admin" element={<AdminBoard />} />
                 <Route path={'/sellers'} element={<AllSellers/>}/>
+                <Route path="/buyerorderdetails" element={<BuyerOrderDetails/>}/>
             </Routes>
     );
 };
