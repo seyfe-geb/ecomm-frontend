@@ -7,7 +7,6 @@ import {Link} from "react-router-dom";
 import Product from "./Product";
 import Header from "../Pages/Header";
 import ProductDetails from "./ProductDetails";
-import userService from "../services/user.service";
 
 
 const SellerProducts = () => {
