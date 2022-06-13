@@ -8,16 +8,18 @@ const BuyerOrderDetails = () => {
     const [orders, setOrders] = useState([]);
 
     const fetchProducts = () => {
-        UserService.getBuyersOrders(currentUser.id)
-            .then(response => setOrders(response.data))
-            .catch(error => console.log("Error fetching"));
+        if(currentUser){
+            UserService.getBuyersOrders(currentUser.id)
+                .then(response => {setOrders(response.data); console.log("Success")})
+                .catch(error => console.log("Error fetching"));
+        }
     };
     useEffect(() => {
         fetchProducts();
     }, [])
     return (
         <div>
-            {orders[0].id}
+            Hi
         </div>
     );
 };

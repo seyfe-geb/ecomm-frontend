@@ -22,7 +22,7 @@ class UserService {
         return axios.get(API_URL + 'seller/products/' + sid, { headers: authHeader() });
     }
     getBuyersOrders(id){
-        return axios.get(API_URL + 'buyer/orders/{id}' + id, {headers: authHeader()});
+        return axios.get(API_URL + 'buyer/orders/' + id, {headers: authHeader()});
     }
 
     getAllProducts() {
