@@ -51,11 +51,18 @@ const Header = () => {
                         </>
                     )}
                     {showAdminBoard && (
-                        <li className="nav-item" style={{marginLeft:"100px"}}>
-                            <Link to={"/admin"} className="nav-link">
-                                Admin Board
-                            </Link>
-                        </li>
+                        <>
+                            <li className="nav-item" style={{marginLeft:"100px"}}>
+                                <Link to={"/admin"} className="nav-link">
+                                    Admin Board
+                                </Link>
+                            </li>
+                            <li className="nav-item" style={{marginLeft:"100px"}}>
+                                <Link to={"/sellers"} className="nav-link">
+                                    Sellers
+                                </Link>
+                            </li>
+                        </>
                     )}
                     {showBuyerBoard && (
                         <li className="nav-item" >

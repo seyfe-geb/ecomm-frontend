@@ -51,5 +51,9 @@ class UserService {
     removeProduct() {
         localStorage.removeItem('product');
     }
+
+    getAllSellers() {
+        return axios.get(API_URL + 'sellers', { headers: authHeader() });
+    }
 }
 export default new UserService();

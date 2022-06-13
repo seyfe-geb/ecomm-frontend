@@ -17,9 +17,7 @@ const Products = (props) => {
             .then(response => setProducts(response.data))
             .catch(error => console.log("Error fetching"));
     };
-    const productDetailsHandler = () => {
-        navigate("/productdetails");
-    }
+    
     useEffect(() => {
         fetchProducts();
         }, [])
