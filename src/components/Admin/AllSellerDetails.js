@@ -20,7 +20,6 @@ const AllSellerDetails = () => {
 
     const approveButtonClicked = (e) => {
         e.preventDefault();
-        alert("Hi");
         const approval = {
             id:userDetail.id,
             approve:false
