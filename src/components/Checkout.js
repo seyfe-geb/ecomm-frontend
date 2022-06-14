@@ -30,7 +30,7 @@ const Checkout = (props) => {
     }
     const cancelOperation = () =>{
         UserService.removeProduct();
-        navigate("/buyerorders");
+        navigate("/products");
     }
 
     return (
