@@ -4,7 +4,7 @@ import {useNavigate} from "react-router";
 import UserService from "../../services/user.service";
 import {Link} from "react-router-dom";
 import Header from "../../Pages/Header";
-import UserDetails from "./UserDetails";
+import AllBuyerDetails from "./AllBuyerDetails";
 
 const AllBuyers = () => {
     const [buyers, setBuyers] = useState([]);
@@ -54,7 +54,7 @@ const AllBuyers = () => {
                         </td>
                         <td>
                             <div className="card card-container3">
-                                <UserDetails/>
+                                <AllBuyerDetails/>
                             </div>
                         </td>
                     </tr>

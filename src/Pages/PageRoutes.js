@@ -14,7 +14,7 @@ import Checkout from "../components/Checkout";
 import SellerProducts from "../components/SellerProducts";
 import BuyerOrderDetails from "../components/BuyerOrderDetails";
 import AllSellers from "../components/Admin/AllSellers";
-import UserDetails from "../components/Admin/UserDetails";
+import AllBuyerDetails from "../components/Admin/AllBuyerDetails";
 import AllBuyers from "../components/Admin/AllBuyers";
 import UnapprovedSellers from "../components/Admin/UnapprovedSellers";
 import UnapprovedUsersDetails from "../components/Admin/UnapprovedUsersDetails";
@@ -36,17 +36,19 @@ const PageRoutes = () => {
 
                 <Route path="/addproduct" element={<AddProduct/>} />
                 <Route path="/checkout" element={<Checkout/>}/>
-                <Route path="/sellerproducts" element={<SellerProducts />} />
+                <Route path="/sellerproducts" element={<SellerProducts />}>
+                    <Route path=":id" element={<ProductDetails/>}/>
+                </Route>
 
                 <Route path="/admin" element={<AdminBoard />} />
                 <Route path={'/sellers'} element={<AllSellers/>}>
-                    <Route path=":id" element={<UserDetails/>}/>
+                    <Route path=":id" element={<AllBuyerDetails/>}/>
                 </Route>
                 <Route path={'/unapprovedsellers'} element={<UnapprovedSellers/>}>
                     <Route path=":id" element={<UnapprovedUsersDetails/>}/>
                 </Route>
                 <Route path={'/buyers'} element={<AllBuyers/>}>
-                    <Route path=":id" element={<UserDetails/>}/>
+                    <Route path=":id" element={<AllBuyerDetails/>}/>
                 </Route>
                 <Route path="/buyerorderdetails" element={<BuyerOrderDetails/>}/>
             </Routes>

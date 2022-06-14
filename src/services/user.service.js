@@ -21,7 +21,7 @@ class UserService {
     getProductsBySellerId(sid) {
         return axios.get(API_URL + 'seller/products/' + sid, { headers: authHeader() });
     }
-    getBuyersOrders(id){
+    getBuyerOrders(id){
         return axios.get(API_URL + 'buyer/orders/' + id, {headers: authHeader()});
     }
 
@@ -69,6 +69,12 @@ class UserService {
 
     getUserById(uid) {
         return axios.get(API_URL + 'users/' + uid, { headers: authHeader() });
+    }
+
+    approveUser(id, approve) {
+        return axios.put(API_URL + 'users',
+            {id, approve},
+            { headers: authHeader() })
     }
 }
 export default new UserService();

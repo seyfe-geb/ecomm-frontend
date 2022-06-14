@@ -3,10 +3,8 @@ import {useEffect, useState} from "react";
 import {useNavigate} from "react-router";
 import UserService from "../../services/user.service";
 import {Link} from "react-router-dom";
-import Product from "../Product";
 import Header from "../../Pages/Header";
-import ProductDetails from "../ProductDetails";
-import UserDetails from "./UserDetails";
+import AllSellerDetails from "./AllSellerDetails";
 
 const AllSellers = () => {
     const [sellers, setSellers] = useState([]);
@@ -56,7 +54,7 @@ const AllSellers = () => {
                         </td>
                         <td>
                             <div className="card card-container3">
-                                <UserDetails/>
+                                <AllSellerDetails/>
                             </div>
                         </td>
                     </tr>

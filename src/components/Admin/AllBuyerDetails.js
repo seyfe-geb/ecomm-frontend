@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import UserService from "../../services/user.service";
 import {useParams} from "react-router-dom";
 
-const UserDetails = () => {
+const AllBuyerDetails = () => {
     const [userDetail, setUserDetail] = useState({});
     const params = useParams();
 
@@ -47,4 +47,4 @@ const UserDetails = () => {
     );
 };
 
-export default UserDetails;
+export default AllBuyerDetails;

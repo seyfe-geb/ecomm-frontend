@@ -31,7 +31,7 @@ const Header = () => {
                             Home
                         </Link>
                     </li>
-                    {showSellerBoard && (
+                    {showSellerBoard && currentUser.approvedSeller?(
                         <>
                             <li className="nav-item">
                                 <Link to={"/seller"} className="nav-link">
@@ -46,6 +46,14 @@ const Header = () => {
                             <li className="nav-item">
                                 <Link to={"/sellerproducts"} className="nav-link">
                                     All Products
+                                </Link>
+                            </li>
+                        </>
+                    ):(
+                        <>
+                            <li className="nav-item">
+                                <Link to={"/seller"} className="nav-link">
+                                    Seller Board
                                 </Link>
                             </li>
                         </>
