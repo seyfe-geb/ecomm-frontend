@@ -79,5 +79,8 @@ class UserService {
     getOrderProductDetailByOrderId(oid) {
         return axios.get(API_URL + 'orderproductdetail/' + oid, { headers: authHeader() });
     }
+    deleteOrderById(id){
+        return axios.delete(API_URL + 'orders/' + id, { headers: authHeader() });
+    }
 }
 export default new UserService();
