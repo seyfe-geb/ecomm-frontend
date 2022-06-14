@@ -5,6 +5,7 @@ import UserService from "../../services/user.service";
 import {Link} from "react-router-dom";
 import Header from "../../Pages/Header";
 import UserDetails from "./UserDetails";
+import UnapprovedUsersDetails from "./UnapprovedUsersDetails";
 
 const UnapprovedSellers = () => {
     const [sellers, setSellers] = useState([]);
@@ -54,7 +55,7 @@ const UnapprovedSellers = () => {
                         </td>
                         <td>
                             <div className="card card-container3">
-                                <UserDetails/>
+                                <UnapprovedUsersDetails/>
                             </div>
                         </td>
                     </tr>

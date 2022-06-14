@@ -17,6 +17,7 @@ import AllSellers from "../components/Admin/AllSellers";
 import UserDetails from "../components/Admin/UserDetails";
 import AllBuyers from "../components/Admin/AllBuyers";
 import UnapprovedSellers from "../components/Admin/UnapprovedSellers";
+import UnapprovedUsersDetails from "../components/Admin/UnapprovedUsersDetails";
 
 const PageRoutes = () => {
     return (
@@ -42,7 +43,7 @@ const PageRoutes = () => {
                     <Route path=":id" element={<UserDetails/>}/>
                 </Route>
                 <Route path={'/unapprovedsellers'} element={<UnapprovedSellers/>}>
-                    <Route path=":id" element={<UserDetails/>}/>
+                    <Route path=":id" element={<UnapprovedUsersDetails/>}/>
                 </Route>
                 <Route path={'/buyers'} element={<AllBuyers/>}>
                     <Route path=":id" element={<UserDetails/>}/>

@@ -10,7 +10,6 @@ import Split from "react-split";
 
 const Products = (props) => {
     const [products, setProducts] = useState([]);
-    const navigate = useNavigate();
 
     const fetchProducts = () => {
         UserService.getAllProducts()
@@ -56,8 +55,6 @@ const Products = (props) => {
                 </table>
             </div>
         </>
-
-
     );
 };
 

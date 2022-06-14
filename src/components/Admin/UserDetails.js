@@ -1,14 +1,10 @@
 import React from 'react';
-import {Fragment, useContext, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import UserService from "../../services/user.service";
-import AuthService from "../../services/auth.service";
 import {useParams} from "react-router-dom";
-import {useNavigate} from "react-router";
-import {SetSelectedId} from "../../store/SetSelectedId";
 
 const UserDetails = () => {
     const [userDetail, setUserDetail] = useState({});
-    const currentUser = AuthService.getCurrentUser();
     const params = useParams();
 
     useEffect(() => {
@@ -33,18 +29,15 @@ const UserDetails = () => {
     // };
     let productDetailDisplay = null;
     if (params.id) {
-        productDetailDisplay =
-            <div style={{backgroundColor:"gray"}}>
-                <div>
-                    Product Detail
+            productDetailDisplay =
+                <div style={{backgroundColor:"gray"}}>
+                    <div>
+                        User Detail
+                    </div>
+                    <h3>First Name: {userDetail.firstName}</h3>
+                    <h3>Last Name: {userDetail.lastName}</h3>
                 </div>
-                <h3>Product Name: {userDetail.productName}</h3>
-                <h3>
-                    Price: {userDetail.price}
-                    <br/>
-                </h3>
 
-            </div>
     }
 
     return (
