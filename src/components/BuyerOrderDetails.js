@@ -19,8 +19,8 @@ const BuyerOrderDetails = () => {
     }, [params.id]);
 
 
-    const cancelButtonClicked = () => {
-
+    const cancelButtonClicked = (e) => {
+        e.preventDefault();
         UserService.deleteOrderById(params.id)
             .then(() => {
                 console.log("Success");
