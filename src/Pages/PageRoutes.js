@@ -14,6 +14,9 @@ import Checkout from "../components/Checkout";
 import SellerProducts from "../components/SellerProducts";
 import BuyerOrderDetails from "../components/BuyerOrderDetails";
 import AllSellers from "../components/Admin/AllSellers";
+import UserDetails from "../components/Admin/UserDetails";
+import AllBuyers from "../components/Admin/AllBuyers";
+import UnapprovedSellers from "../components/Admin/UnapprovedSellers";
 
 const PageRoutes = () => {
     return (
@@ -35,7 +38,15 @@ const PageRoutes = () => {
                 <Route path="/sellerproducts" element={<SellerProducts />} />
 
                 <Route path="/admin" element={<AdminBoard />} />
-                <Route path={'/sellers'} element={<AllSellers/>}/>
+                <Route path={'/sellers'} element={<AllSellers/>}>
+                    <Route path=":id" element={<UserDetails/>}/>
+                </Route>
+                <Route path={'/unapprovedsellers'} element={<UnapprovedSellers/>}>
+                    <Route path=":id" element={<UserDetails/>}/>
+                </Route>
+                <Route path={'/buyers'} element={<AllBuyers/>}>
+                    <Route path=":id" element={<UserDetails/>}/>
+                </Route>
                 <Route path="/buyerorderdetails" element={<BuyerOrderDetails/>}/>
             </Routes>
     );

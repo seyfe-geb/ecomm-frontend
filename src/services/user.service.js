@@ -58,5 +58,17 @@ class UserService {
     getAllSellers() {
         return axios.get(API_URL + 'sellers', { headers: authHeader() });
     }
+
+    getUnapprovedSellers() {
+        return axios.get(API_URL + 'sellers/unapproved', { headers: authHeader() });
+    }
+
+    getAllBuyers() {
+        return axios.get(API_URL + 'buyers', { headers: authHeader() });
+    }
+
+    getUserById(uid) {
+        return axios.get(API_URL + 'users/' + uid, { headers: authHeader() });
+    }
 }
 export default new UserService();

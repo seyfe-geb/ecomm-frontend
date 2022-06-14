@@ -58,8 +58,18 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className="nav-item" style={{marginLeft:"100px"}}>
+                                <Link to={"/unapprovedsellers"} className="nav-link">
+                                    Unapproved Sellers
+                                </Link>
+                            </li>
+                            <li className="nav-item" style={{marginLeft:"100px"}}>
                                 <Link to={"/sellers"} className="nav-link">
                                     Sellers
+                                </Link>
+                            </li>
+                            <li className="nav-item" style={{marginLeft:"100px"}}>
+                                <Link to={"/buyers"} className="nav-link">
+                                    Buyers
                                 </Link>
                             </li>
                         </>
@@ -87,20 +97,20 @@ const Header = () => {
                                 {currentUser.username}
                             </Link>
                         </li>
-                        <li className="nav-item" style={{marginLeft:"1000px"}}>
+                        <li className="nav-item" style={{marginLeft:"500px"}}>
                             <a href="/login" className="nav-link" onClick={logOut}>
                                 LogOut
                             </a>
                         </li>
                     </div>
                 ) : (
-                    <div className="navbar-nav ml-auto" style={{marginLeft:"1000px"}}>
+                    <div className="navbar-nav ml-auto" style={{marginLeft:"50px"}}>
                         <li className="nav-item">
                             <Link to={"/login"} className="nav-link">
                                 Login
                             </Link>
                         </li>
-                        <li className="nav-item" style={{marginLeft:"20px"}}>
+                        <li className="nav-item" style={{marginLeft:"500px"}}>
                             <Link to={"/register"} className="nav-link">
                                 Sign Up
                             </Link>

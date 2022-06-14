@@ -22,20 +22,24 @@ const AllSellers = () => {
         fetchSellers();
     }, [])
 
-    // const sellersList = sellers.map(seller =>{
-    //     return (
-    //         <Link to={`${seller.id}`} key={seller.id} >
-    //             <tr>
-    //                 <td>Seller Id : {seller.id}</td>
-    //                 <td>First Name : {seller.firstName}</td>
-    //                 <td>Last Name : {seller.lastName}</td>
-    //                 <td>Email : {seller.email}</td>
-    //                 <td>Is Account Enabled : {seller.enabled + ''}</td>
-    //                 <td>Is Account An Approved Seller: {seller.approvedSeller + ''}</td>
-    //             </tr>
-    //         </Link>
-    //     );
-    // });
+    let sellersList = null;
+    if(sellers){
+        sellersList = sellers.map(seller =>{
+            return (
+                <Link to={`${seller.id}`} key={seller.id} >
+                    <tr>
+                        <td>Seller Id : {seller.id}</td>
+                        <td>First Name : {seller.firstName}</td>
+                        <td>Last Name : {seller.lastName}</td>
+                        <td>Email : {seller.email}</td>
+                        <td>Is Account Enabled : {seller.enabled + ''}</td>
+                        <td>Is Account An Approved Seller: {seller.approvedSeller + ''}</td>
+                    </tr>
+                </Link>
+            );
+        });
+    }
+
 
     return (
         <>
@@ -45,7 +49,9 @@ const AllSellers = () => {
                     <tr>
                         <td>
                             <div className="card card-container2">
-                                <h1>hi</h1>
+                                <table>
+                                    {sellersList}
+                                </table>
                             </div>
                         </td>
                         <td>
