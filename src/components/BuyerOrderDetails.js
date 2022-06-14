@@ -19,20 +19,18 @@ const BuyerOrderDetails = () => {
     }, [params.id]);
 
 
-    // const approveButtonClicked = (e) => {
-    //     e.preventDefault();
-    //     alert("Hi");
-    //     const approval = {
-    //         id:orderDetail.id,
-    //         approve:false
-    //     };
-    //     UserService.approveUser(approval.id, approval.approve)
-    //         .then(() => {
-    //             console.log("Success");
-    //             navigate("/unapprovedsellers");
-    //         })
-    //         .catch(error => console.log("Error posting data!"));
-    // };
+    const cancelButtonClicked = (e) => {
+        e.preventDefault();
+        alert("Hi");
+
+
+        UserService.deleteOrderById(params.id)
+            .then(() => {
+                console.log("Success");
+                navigate("/products");
+            })
+            .catch(error => console.log("Error posting data!"));
+    };
     let orderDetailDisplay = null;
     if (params.id) {
         orderDetailDisplay =
@@ -45,7 +43,8 @@ const BuyerOrderDetails = () => {
                 <h3>Quantity: {orderDetail.quantity}</h3>
                 <h2>Product Detail</h2>
                 <h3>Product Name: {orderDetail.productName}</h3>
-                <img src={orderDetail.productImage} width={250} height={250} alt={orderDetail.productName}/>
+                <img src={orderDetail.productImage} width={250} height={250} alt={orderDetail.productName}/><br/>
+                <button onClick={cancelButtonClicked}> Cancel Order </button>
             </div>
 
     }
