@@ -21,9 +21,6 @@ const BuyerOrderDetails = () => {
 
     const cancelButtonClicked = (e) => {
         e.preventDefault();
-        alert("Hi");
-
-
         UserService.deleteOrderById(params.id)
             .then(() => {
                 console.log("Success");
