@@ -19,10 +19,7 @@ const BuyerOrderDetails = () => {
     }, [params.id]);
 
 
-    const cancelButtonClicked = (e) => {
-        e.preventDefault();
-        alert("Hi");
-
+    const cancelButtonClicked = () => {
 
         UserService.deleteOrderById(params.id)
             .then(() => {
