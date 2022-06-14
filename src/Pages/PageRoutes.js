@@ -15,6 +15,7 @@ import SellerProducts from "../components/SellerProducts";
 import BuyerOrderDetails from "../components/BuyerOrderDetails";
 import AllSellers from "../components/Admin/AllSellers";
 import AllBuyerDetails from "../components/Admin/AllBuyerDetails";
+import OrderedItems from "../components/OrderedItems";
 import AllBuyers from "../components/Admin/AllBuyers";
 import UnapprovedSellers from "../components/Admin/UnapprovedSellers";
 import UnapprovedUsersDetails from "../components/Admin/UnapprovedUsersDetails";
@@ -54,6 +55,7 @@ const PageRoutes = () => {
                 <Route path="/buyerorders" element={<BuyerOrders/>}>
                     <Route path=":id" element={<BuyerOrderDetails/>}/>
                 </Route>
+                <Route path="/ordereditems" element={<OrderedItems />} />
             </Routes>
     );
 };
