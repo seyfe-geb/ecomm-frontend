@@ -47,7 +47,7 @@ class UserService {
     }
 
     setSelectedProduct(pid){
-        axios.get(API_URL + 'product/' + pid, { headers: authHeader() })
+        axios.get(API_URL + 'product/' + pid)
             .then(response => localStorage.setItem("product", JSON.stringify(response.data)))
             .catch(error => console.log("Error fetchinng data!"));
     }

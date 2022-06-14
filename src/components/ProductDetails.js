@@ -32,7 +32,7 @@ const ProductDetails = (props) => {
 
     const checkoutButtonClicked = () => {
         if(currentUser){
-            UserService.removeProduct();
+            // UserService.removeProduct();
             UserService.setSelectedProduct(params.id);
             window.open("/checkout","_self");
         }else{
