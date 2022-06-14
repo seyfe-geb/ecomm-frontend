@@ -24,7 +24,7 @@ const Checkout = (props) => {
         UserService.newOrder(newOrder.price, newOrder.productQuantity, newOrder.productId, newOrder.userId)
             .then(() => {
                 console.log("Success");
-                navigate("/products");
+                navigate("/buyerorders");
             })
             .catch(error => console.log("Error posting data!"));
     }
