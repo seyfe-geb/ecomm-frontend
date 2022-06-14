@@ -18,6 +18,7 @@ import AllBuyerDetails from "../components/Admin/AllBuyerDetails";
 import AllBuyers from "../components/Admin/AllBuyers";
 import UnapprovedSellers from "../components/Admin/UnapprovedSellers";
 import UnapprovedUsersDetails from "../components/Admin/UnapprovedUsersDetails";
+import BuyerOrders from "../components/BuyerOrders";
 
 const PageRoutes = () => {
     return (
@@ -50,7 +51,9 @@ const PageRoutes = () => {
                 <Route path={'/buyers'} element={<AllBuyers/>}>
                     <Route path=":id" element={<AllBuyerDetails/>}/>
                 </Route>
-                <Route path="/buyerorderdetails" element={<BuyerOrderDetails/>}/>
+                <Route path="/buyerorders" element={<BuyerOrders/>}>
+                    <Route path=":id" element={<BuyerOrderDetails/>}/>
+                </Route>
             </Routes>
     );
 };

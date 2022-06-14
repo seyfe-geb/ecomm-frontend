@@ -25,14 +25,14 @@ const UnapprovedSellers = () => {
         sellersList = sellers.map(seller =>{
             return (
                 <Link to={`${seller.id}`} key={seller.id} >
-                    <tr>
-                        <td>Seller Id : {seller.id}</td>
-                        <td>First Name : {seller.firstName}</td>
-                        <td>Last Name : {seller.lastName}</td>
-                        <td>Email : {seller.email}</td>
-                        <td>Is Account Enabled : {seller.enabled + ''}</td>
-                        <td>Is Account An Approved Seller: {seller.approvedSeller + ''}</td>
-                    </tr>
+                    <div className="card card-container2">
+                        <th>Seller Id : {seller.id}</th>
+                        <th>First Name : {seller.firstName}</th>
+                        <th>Last Name : {seller.lastName}</th>
+                        <th>Email : {seller.email}</th>
+                        <th>Is Account Enabled : {seller.enabled + ''}</th>
+                        <th>Is Account An Approved Seller: {seller.approvedSeller + ''}</th>
+                    </div>
                 </Link>
             );
         });
@@ -47,9 +47,7 @@ const UnapprovedSellers = () => {
                     <tr>
                         <td>
                             <div className="card card-container2">
-                                <table>
                                     {sellersList}
-                                </table>
                             </div>
                         </td>
                         <td>

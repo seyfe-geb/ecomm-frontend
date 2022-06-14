@@ -49,7 +49,7 @@ const Header = () => {
                                 </Link>
                             </li>
                         </>
-                    ):(
+                    ):showSellerBoard &&(
                         <>
                             <li className="nav-item">
                                 <Link to={"/seller"} className="nav-link">
@@ -90,8 +90,8 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className="nav-item" >
-                                <Link to={"/buyerorderdetails"} className="nav-link">
-                                    Buyer Order Details
+                                <Link to={"/buyerorders"} className="nav-link">
+                                    Orders
                                 </Link>
                             </li>
                         </>

@@ -1,41 +1,59 @@
 import React, {useState} from 'react';
-import AuthService from "../services/auth.service";
 import UserService from "../services/user.service";
 import {useEffect} from "react";
-import {Link} from "react-router-dom";
-import Product from "./Product";
+import {useParams} from "react-router-dom";
+import {useNavigate} from "react-router";
 
 const BuyerOrderDetails = () => {
-    const currentUser = AuthService.getCurrentUser();
-    const [orders, setOrders] = useState([]);
+    const [orderDetail, setOrderDetail] = useState({});
+    const [productDetail, setProductDetail] = useState({});
+    const params = useParams();
+    const navigate = useNavigate();
 
-    const fetchOrders = () => {
-        if(currentUser){
-            UserService.getBuyerOrders(currentUser.id)
-                .then(response => {setOrders(response.data); console.log("Success")})
-                .catch(error => console.log("Error fetching"));
-        }
-    };
-    // const productsList = products.map(product =>{
-    //     return (
-    //         <Link to={`${product.id}`} key={product.id} >
-    //             <Product
-    //                 id={product.id}
-    //                 name={product.productName}
-    //                 price={product.price}
-    //                 pimage={product.productImage}
-    //                 key={product.id}
-    //             />
-    //         </Link>
-    //     );
-    // });
     useEffect(() => {
-        fetchOrders();
-    }, [])
-    return (
-        <div>
+        if (params.id) {
+            UserService.getOrderProductDetailByOrderId(params.id)
+                .then(response => setOrderDetail(response.data))
+                .catch(error => console.log("Error fetchinng data!"));
+        }
+    }, [params.id]);
 
-        </div>
+
+    // const approveButtonClicked = (e) => {
+    //     e.preventDefault();
+    //     alert("Hi");
+    //     const approval = {
+    //         id:orderDetail.id,
+    //         approve:false
+    //     };
+    //     UserService.approveUser(approval.id, approval.approve)
+    //         .then(() => {
+    //             console.log("Success");
+    //             navigate("/unapprovedsellers");
+    //         })
+    //         .catch(error => console.log("Error posting data!"));
+    // };
+    let orderDetailDisplay = null;
+    if (params.id) {
+        orderDetailDisplay =
+            <div style={{backgroundColor:"gray"}}>
+                <div>
+                    Order Detail
+                </div>
+                <h3>Order Id: {orderDetail.id}</h3>
+                <h3>Product Price: {orderDetail.price}</h3>
+                <h3>Quantity: {orderDetail.quantity}</h3>
+                <h2>Product Detail</h2>
+                <h3>Product Name: {orderDetail.productName}</h3>
+                <img src={orderDetail.productImage} width={250} height={250} alt={orderDetail.productName}/>
+            </div>
+
+    }
+
+    return (
+        <>
+            {orderDetailDisplay}
+        </>
     );
 };
 

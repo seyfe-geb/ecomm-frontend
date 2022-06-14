@@ -25,14 +25,14 @@ const AllBuyers = () => {
         buyersList = buyers.map(buyer =>{
             return (
                 <Link to={`${buyer.id}`} key={buyer.id} >
-                    <tr>
-                        <td>Buyer Id : {buyer.id}</td>
-                        <td>First Name : {buyer.firstName}</td>
-                        <td>Last Name : {buyer.lastName}</td>
-                        <td>Email : {buyer.email}</td>
-                        <td>Is Account Enabled : {buyer.enabled + ''}</td>
-                        <td>Is Account An Approved Seller: {buyer.approvedSeller + ''}</td>
-                    </tr>
+                    <div className="card card-container2">
+                        <h4>Buyer Id : {buyer.id}</h4>
+                        <h4>First Name : {buyer.firstName}</h4>
+                        <h4>Last Name : {buyer.lastName}</h4>
+                        <h4>Email : {buyer.email}</h4>
+                        <h4>Is Account Enabled : {buyer.enabled + ''}</h4>
+                        <h4>Is Account An Approved Seller: {buyer.approvedSeller + ''}</h4>
+                    </div>
                 </Link>
             );
         });
@@ -47,9 +47,7 @@ const AllBuyers = () => {
                     <tr>
                         <td>
                             <div className="card card-container2">
-                                <table>
                                     {buyersList}
-                                </table>
                             </div>
                         </td>
                         <td>

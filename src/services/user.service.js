@@ -76,5 +76,8 @@ class UserService {
             {id, approve},
             { headers: authHeader() })
     }
+    getOrderProductDetailByOrderId(oid) {
+        return axios.get(API_URL + 'orderproductdetail/' + oid, { headers: authHeader() });
+    }
 }
 export default new UserService();
