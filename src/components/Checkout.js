@@ -1,12 +1,9 @@
 import React from 'react';
 import AuthService from "../services/auth.service";
-import {useRef} from "react";
 import {useNavigate} from "react-router";
 import UserService from "../services/user.service";
 import Header from "../Pages/Header";
-import {useContext, useEffect, useState} from "react";
-import {SelectedId} from "../store/SelectedId";
-import {useParams} from "react-router-dom";
+import {useState} from "react";
 
 const Checkout = (props) => {
     const currentUser = AuthService.getCurrentUser();

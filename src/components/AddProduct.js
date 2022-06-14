@@ -25,13 +25,9 @@ const AddProduct = () => {
             newProduct.quantity, newProduct.productImage, newProduct.userId)
             .then(() => {
                 console.log("Success");
-                navigate("/home");
+                navigate("/products");
             })
             .catch(error => console.log("Error posting data!"));
-    }
-
-    function myFormat(num) {
-        return num + '$';
     }
 
     return (
