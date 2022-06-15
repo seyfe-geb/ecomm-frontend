@@ -20,7 +20,7 @@ const SellerProductDetails = () => {
 
     const removeProductButtonClicked = () => {
         UserService.deleteProductById(params.id)
-            .then(response => navigate("/products"))
+            .then(response => window.open("/sellerproducts","_self"))
             .catch(error => console.log("Error deleting product"))
     };
 
