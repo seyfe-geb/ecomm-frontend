@@ -25,7 +25,7 @@ const AddProduct = () => {
             newProduct.quantity, newProduct.productImage, newProduct.userId)
             .then(() => {
                 console.log("Success");
-                navigate("/products");
+                window.open("/sellerproducts","_self");
             })
             .catch(error => console.log("Error posting data!"));
     }
