@@ -15,14 +15,14 @@ class UserService {
         return axios.get(API_URL + 'admin', { headers: authHeader() });
     }
     getProductById(pid) {
-        return axios.get(API_URL + 'product/' + pid, { headers: authHeader() });
+        return axios.get(API_URL + 'products/' + pid, { headers: authHeader() });
     }
 
     getProductsBySellerId(sid) {
-        return axios.get(API_URL + 'seller/products/' + sid, { headers: authHeader() });
+        return axios.get(API_URL + 'products/seller/' + sid, { headers: authHeader() });
     }
     getBuyerOrders(id){
-        return axios.get(API_URL + 'buyer/orders/' + id, {headers: authHeader()});
+        return axios.get(API_URL + 'orders/buyer/' + id, {headers: authHeader()});
     }
 
     getAllProducts() {
@@ -31,20 +31,20 @@ class UserService {
 
     addProduct(productName, price, productDescription,
                 quantity, productImage, userId){
-        return axios.post(API_URL + 'seller/addproduct',
+        return axios.post(API_URL + 'products/addproduct',
                             {productName, price, productDescription,
                                 quantity, productImage, userId},
                         { headers: authHeader() })
     }
 
     newOrder(price, quantity, productId, userId){
-        return axios.post(API_URL + 'buyer/neworder',
+        return axios.post(API_URL + 'orders/neworder',
             {price, quantity, productId, userId},
             { headers: authHeader() })
     }
 
     setSelectedProduct(pid){
-        axios.get(API_URL + 'product/' + pid)
+        axios.get(API_URL + 'products/' + pid)
             .then(response => localStorage.setItem("product", JSON.stringify(response.data)))
             .catch(error => console.log("Error fetchinng data!"));
     }
@@ -56,15 +56,15 @@ class UserService {
     }
 
     getAllSellers() {
-        return axios.get(API_URL + 'sellers', { headers: authHeader() });
+        return axios.get(API_URL + 'users/sellers', { headers: authHeader() });
     }
 
     getUnapprovedSellers() {
-        return axios.get(API_URL + 'sellers/unapproved', { headers: authHeader() });
+        return axios.get(API_URL + 'users/sellers/unapproved', { headers: authHeader() });
     }
 
     getAllBuyers() {
-        return axios.get(API_URL + 'buyers', { headers: authHeader() });
+        return axios.get(API_URL + 'users/buyers', { headers: authHeader() });
     }
 
     getUserById(uid) {
@@ -77,14 +77,14 @@ class UserService {
             { headers: authHeader() })
     }
     getOrderProductDetailByOrderId(oid) {
-        return axios.get(API_URL + 'orderproductdetail/' + oid, { headers: authHeader() });
+        return axios.get(API_URL + 'orders/productdetail/' + oid, { headers: authHeader() });
     }
     deleteOrderById(id){
         return axios.delete(API_URL + 'orders/' + id, { headers: authHeader() });
     }
 
     getSellerOrders(id) {
-        return axios.get(API_URL + 'seller/orders/' + id, {headers: authHeader()});
+        return axios.get(API_URL + 'orders/seller/' + id, {headers: authHeader()});
     }
 
     deleteProductById(id) {
