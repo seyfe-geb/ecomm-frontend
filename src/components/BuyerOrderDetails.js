@@ -35,7 +35,7 @@ const BuyerOrderDetails = () => {
                 <div>
                     Order Detail
                 </div>
-                <h3>Order Id: {orderDetail.id}</h3>
+                <h3>Order Id: {params.id}</h3>
                 <h3>Product Price: {orderDetail.price}</h3>
                 <h3>Quantity: {orderDetail.quantity}</h3>
                 <h2>Product Detail</h2>

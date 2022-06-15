@@ -7,6 +7,7 @@ import {Link} from "react-router-dom";
 import Product from "./Product";
 import Header from "../Pages/Header";
 import ProductDetails from "./ProductDetails";
+import SellerProductDetails from "./SellerProductDetails";
 
 
 const SellerProducts = () => {
@@ -53,7 +54,7 @@ const SellerProducts = () => {
                         </td>
                         <td>
                             <div className="card card-container3">
-                                <ProductDetails/>
+                                <SellerProductDetails/>
                             </div>
                         </td>
                     </tr>
