@@ -22,6 +22,8 @@ import BuyerOrders from "../components/BuyerOrders";
 import SellerOrders from "../components/SellerOrders";
 import SellerOrderDetails from "../components/SellerOrderDetails";
 import SellerProductDetails from "../components/SellerProductDetails";
+import ApprovedSellers from "../components/Admin/ApprovedSellers";
+import ApprovedSellersDetails from "../components/Admin/ApprovedSellersDetails";
 
 const PageRoutes = () => {
     return (
@@ -47,6 +49,9 @@ const PageRoutes = () => {
                 <Route path="/admin" element={<AdminBoard />} />
                 <Route path={'/sellers'} element={<AllSellers/>}>
                     <Route path=":id" element={<AllBuyerDetails/>}/>
+                </Route>
+                <Route path={'/approvedsellers'} element={<ApprovedSellers/>}>
+                    <Route path=":id" element={<ApprovedSellersDetails/>}/>
                 </Route>
                 <Route path={'/unapprovedsellers'} element={<UnapprovedSellers/>}>
                     <Route path=":id" element={<UnapprovedUsersDetails/>}/>

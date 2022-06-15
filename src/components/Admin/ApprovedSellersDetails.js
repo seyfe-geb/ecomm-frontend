@@ -1,11 +1,10 @@
 import React from 'react';
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
-import UserService from "../../services/user.service";
-import app from "../../App";
 import {useNavigate} from "react-router";
+import UserService from "../../services/user.service";
 
-const UnapprovedUsersDetails = () => {
+const ApprovedSellersDetails = () => {
     const [userDetail, setUserDetail] = useState({});
     const params = useParams();
     const navigate = useNavigate();
@@ -19,16 +18,16 @@ const UnapprovedUsersDetails = () => {
     }, [params.id]);
 
 
-    const approveButtonClicked = (e) => {
+    const revokeApprovalButtonClicked = (e) => {
         e.preventDefault();
         const approval = {
             id:userDetail.id,
-            approve:true
+            approve:false
         };
         UserService.approveUser(approval.id, approval.approve)
             .then(() => {
                 console.log("Success");
-                navigate("/approvedsellers");
+                navigate("/unapprovedsellers");
             })
             .catch(error => console.log("Error posting data!"));
     };
@@ -41,7 +40,7 @@ const UnapprovedUsersDetails = () => {
                 </div>
                 <h3>First Name: {userDetail.firstName}</h3>
                 <h3>Last Name: {userDetail.lastName}</h3>
-                <button onClick={approveButtonClicked}>Approve Seller</button>
+                <button onClick={revokeApprovalButtonClicked}>Revoke Seller Approval</button>
             </div>
 
     }
@@ -53,4 +52,4 @@ const UnapprovedUsersDetails = () => {
     );
 };
 
-export default UnapprovedUsersDetails;
+export default ApprovedSellersDetails;

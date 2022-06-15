@@ -90,5 +90,9 @@ class UserService {
     deleteProductById(id) {
         return axios.delete(API_URL + 'products/' + id, { headers: authHeader() });
     }
+
+    getApprovedSellers() {
+        return axios.get(API_URL + 'users/sellers/approved', { headers: authHeader() });
+    }
 }
 export default new UserService();

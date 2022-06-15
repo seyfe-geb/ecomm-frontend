@@ -18,19 +18,6 @@ const AllSellerDetails = () => {
     }, [params.id]);
 
 
-    const approveButtonClicked = (e) => {
-        e.preventDefault();
-        const approval = {
-            id:userDetail.id,
-            approve:false
-        };
-        UserService.approveUser(approval.id, approval.approve)
-            .then(() => {
-                console.log("Success");
-                navigate("/unapprovedsellers");
-            })
-            .catch(error => console.log("Error posting data!"));
-    };
     let productDetailDisplay = null;
     if (params.id) {
         productDetailDisplay =
@@ -40,7 +27,6 @@ const AllSellerDetails = () => {
                 </div>
                 <h3>First Name: {userDetail.firstName}</h3>
                 <h3>Last Name: {userDetail.lastName}</h3>
-                <button onClick={approveButtonClicked}>Revoke Seller Approval</button>
             </div>
 
     }

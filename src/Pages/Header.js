@@ -76,6 +76,11 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className="nav-item" style={{marginLeft:"100px"}}>
+                                <Link to={"/approvedsellers"} className="nav-link">
+                                    Approved Sellers
+                                </Link>
+                            </li>
+                            <li className="nav-item" style={{marginLeft:"100px"}}>
                                 <Link to={"/sellers"} className="nav-link">
                                     Sellers
                                 </Link>
