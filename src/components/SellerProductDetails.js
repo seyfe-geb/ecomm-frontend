@@ -1,22 +1,15 @@
-import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
-import {useNavigate} from 'react-router';
+import React from 'react';
+import {useEffect, useState} from "react";
 import UserService from "../services/user.service";
-import AuthService from "../services/auth.service";
+import {useParams} from "react-router-dom";
+import {useNavigate} from "react-router";
 
-const ProductDetails = (props) => {
+const SellerProductDetails = () => {
     const [productDetail, setProductDetail] = useState({});
-    const [checkoutButtonShow, setCheckoutButtonShow] = useState(false);
-    const currentUser = AuthService.getCurrentUser();
     const params = useParams();
     const navigate = useNavigate();
 
     useEffect(() => {
-        if(currentUser&&currentUser.roles[0]==='ROLE_BUYER'){
-            setCheckoutButtonShow(true);
-        }else{
-            setCheckoutButtonShow(false);
-        }
         if (params.id) {
             UserService.getProductById(params.id)
                 .then(response => setProductDetail(response.data))
@@ -25,16 +18,10 @@ const ProductDetails = (props) => {
     }, [params.id]);
 
 
-    const checkoutButtonClicked = () => {
-        if(currentUser){
-            // UserService.removeProduct();
-            UserService.setSelectedProduct(params.id);
-            window.open("/checkout","_self");
-        }else{
-            alert("Please sign in!");
-            navigate("/login");
-        }
-
+    const removeProductButtonClicked = () => {
+        UserService.deleteProductById(params.id)
+            .then(response => navigate("/products"))
+            .catch(error => console.log("Error deleting product"))
     };
 
     let productDetailDisplay = null;
@@ -50,9 +37,8 @@ const ProductDetails = (props) => {
                     <br/>
                 </h3>
                 <img src={productDetail.productImage} width={250} height={250} alt={productDetail.productName}/><br/>
-                {
-                    checkoutButtonShow && (<button onClick={checkoutButtonClicked}> Checkout</button>)
-                }
+                <button onClick={removeProductButtonClicked}>Remove Product</button>
+
 
             </div>
     }
@@ -64,4 +50,4 @@ const ProductDetails = (props) => {
     );
 };
 
-export default ProductDetails;
+export default SellerProductDetails;

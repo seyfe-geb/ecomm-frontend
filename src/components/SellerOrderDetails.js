@@ -1,12 +1,11 @@
-import React, {useState} from 'react';
-import UserService from "../services/user.service";
-import {useEffect} from "react";
+import React from 'react';
+import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {useNavigate} from "react-router";
+import UserService from "../services/user.service";
 
-const BuyerOrderDetails = () => {
+const SellerOrderDetails = () => {
     const [orderDetail, setOrderDetail] = useState({});
-    const [productDetail, setProductDetail] = useState({});
     const params = useParams();
     const navigate = useNavigate();
 
@@ -53,4 +52,4 @@ const BuyerOrderDetails = () => {
     );
 };
 
-export default BuyerOrderDetails;
+export default SellerOrderDetails;

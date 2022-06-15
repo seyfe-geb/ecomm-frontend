@@ -1,17 +1,15 @@
 import React from 'react';
 import AuthService from "../services/auth.service";
 import {useEffect, useState} from "react";
-import {useNavigate} from "react-router";
 import UserService from "../services/user.service";
 import {Link} from "react-router-dom";
 import Product from "./Product";
 import Header from "../Pages/Header";
-import ProductDetails from "./ProductDetails";
+import SellerProductDetails from "./SellerProductDetails";
 
 
 const SellerProducts = () => {
     const [products, setProducts] = useState([]);
-    const navigate = useNavigate();
     const currentUser = AuthService.getCurrentUser();
 
     const fetchProducts = () => {
@@ -19,9 +17,7 @@ const SellerProducts = () => {
     .then(response => setProducts(response.data))
             .catch(error => console.log("Error fetching"));
     };
-    const productDetailsHandler = () => {
-        navigate("/productdetails");
-    }
+
     useEffect(() => {
         fetchProducts();
     }, [])
@@ -53,7 +49,7 @@ const SellerProducts = () => {
                         </td>
                         <td>
                             <div className="card card-container3">
-                                <ProductDetails/>
+                                <SellerProductDetails/>
                             </div>
                         </td>
                     </tr>

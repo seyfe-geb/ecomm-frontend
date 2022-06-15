@@ -9,7 +9,7 @@ const Profile = () => {
     return (
         <div>
             <Header />
-            <div className="card card-container" style={{marginLeft:"500px"}}>
+            <div className="card card-container" style={{marginLeft:"50px"}}>
                 <header className="jumbotron">
                     <h3>
                         <strong>{currentUser.username}</strong> Profile
@@ -30,7 +30,6 @@ const Profile = () => {
                 <p>
                     <strong>Email:</strong> {currentUser.email}
                 </p>
-
                 <strong>Authorities:</strong>
                 <ul>
                     {currentUser.roles &&
@@ -52,15 +51,16 @@ const Profile = () => {
                 <p>
                     <strong>Is user an approved seller:</strong> {currentUser.approvedSeller + ''}
                 </p>
+            </div>
+                <div className="card card-container" style={{marginLeft:"50px"}}>
 
-                <div>
                     <h3>Address</h3>
                     <p>
-                        <strong>Street:</strong> {currentUser.createdAt}
+                        <strong>Street:</strong> {currentUser.street}
                     </p>
 
                     <p>
-                        <strong>City:</strong> {currentUser.modifiedAt}
+                        <strong>City:</strong> {currentUser.city}
                     </p>
 
                     <p>
@@ -68,26 +68,28 @@ const Profile = () => {
                     </p>
 
                     <p>
-                        <strong>Zip Code:</strong> {currentUser.approvedSeller + ''}
+                        <strong>Zip Code:</strong> {currentUser.zipcode}
                     </p>
                 </div>
-                <div>
+                <div className="card card-container" style={{marginLeft:"50px"}}>
                     <h3>Payment Information</h3>
                     <p>
-                        <strong>Street:</strong> {currentUser.createdAt}
+                        <strong>CardName:</strong> {currentUser.cardName}
                     </p>
 
                     <p>
-                        <strong>City:</strong> {currentUser.modifiedAt}
+                        <strong>CardType:</strong> {currentUser.cardType}
                     </p>
 
                     <p>
-                        <strong>State:</strong> {currentUser.enabled + ''}
+
+                        <strong>CardNumber:</strong> {currentUser.cardNumber}
                     </p>
 
                     <p>
-                        <strong>Zip Code:</strong> {currentUser.approvedSeller + ''}
+                        <strong>CardCVV:</strong> {currentUser.cardCVV}
                     </p>
+
                 </div>
 
                 {/*<p>*/}
@@ -96,7 +98,7 @@ const Profile = () => {
                 {/*</p>*/}
 
 
-            </div>
+
         </div>
     );
 };

@@ -15,11 +15,13 @@ import SellerProducts from "../components/SellerProducts";
 import BuyerOrderDetails from "../components/BuyerOrderDetails";
 import AllSellers from "../components/Admin/AllSellers";
 import AllBuyerDetails from "../components/Admin/AllBuyerDetails";
-import OrderedItems from "../components/OrderedItems";
 import AllBuyers from "../components/Admin/AllBuyers";
 import UnapprovedSellers from "../components/Admin/UnapprovedSellers";
 import UnapprovedUsersDetails from "../components/Admin/UnapprovedUsersDetails";
 import BuyerOrders from "../components/BuyerOrders";
+import SellerOrders from "../components/SellerOrders";
+import SellerOrderDetails from "../components/SellerOrderDetails";
+import SellerProductDetails from "../components/SellerProductDetails";
 
 const PageRoutes = () => {
     return (
@@ -39,7 +41,7 @@ const PageRoutes = () => {
                 <Route path="/addproduct" element={<AddProduct/>} />
                 <Route path="/checkout" element={<Checkout/>}/>
                 <Route path="/sellerproducts" element={<SellerProducts />}>
-                    <Route path=":id" element={<ProductDetails/>}/>
+                    <Route path=":id" element={<SellerProductDetails/>}/>
                 </Route>
 
                 <Route path="/admin" element={<AdminBoard />} />
@@ -55,7 +57,9 @@ const PageRoutes = () => {
                 <Route path="/buyerorders" element={<BuyerOrders/>}>
                     <Route path=":id" element={<BuyerOrderDetails/>}/>
                 </Route>
-                <Route path="/ordereditems" element={<OrderedItems />} />
+                <Route path="/sellerorders" element={<SellerOrders/>}>
+                    <Route path=":id" element={<SellerOrderDetails/>}/>
+                </Route>
             </Routes>
     );
 };

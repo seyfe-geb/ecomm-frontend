@@ -2,7 +2,6 @@ import React from 'react';
 import AuthService from "../services/auth.service";
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
-import OrderedItems from "../components/OrderedItems";
 
 const Header = () => {
     const currentUser = AuthService.getCurrentUser();
@@ -46,12 +45,12 @@ const Header = () => {
                             </li>
                             <li className="nav-item">
                                 <Link to={"/sellerproducts"} className="nav-link">
-                                    Show Products
+                                    My Products
                                 </Link>
                             </li>
-                            <li className="nav-item">
-                                <Link to={"/ordereditems"} className="nav-link">
-                                    Ordered Items
+                            <li className="nav-item" >
+                                <Link to={"/sellerorders"} className="nav-link">
+                                    My Orders
                                 </Link>
                             </li>
                         </>
@@ -97,7 +96,7 @@ const Header = () => {
                             </li>
                             <li className="nav-item" >
                                 <Link to={"/buyerorders"} className="nav-link">
-                                    Orders
+                                    My Orders
                                 </Link>
                             </li>
                         </>
