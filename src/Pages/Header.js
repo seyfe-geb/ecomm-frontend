@@ -34,8 +34,8 @@ const Header = () => {
                     {showSellerBoard && currentUser.approvedSeller?(
                         <>
                             <li className="nav-item">
-                                <Link to={"/seller"} className="nav-link">
-                                    Seller Board
+                                <Link to={"/profile"} className="nav-link">
+                                    Seller Profile
                                 </Link>
                             </li>
                             <li className="nav-item">
@@ -57,8 +57,8 @@ const Header = () => {
                     ):showSellerBoard &&(
                         <>
                             <li className="nav-item">
-                                <Link to={"/seller"} className="nav-link">
-                                    Seller Board
+                                <Link to={"/profile"} className="nav-link">
+                                    Seller Profile
                                 </Link>
                             </li>
                         </>
@@ -66,8 +66,8 @@ const Header = () => {
                     {showAdminBoard && (
                         <>
                             <li className="nav-item" style={{marginLeft:"100px"}}>
-                                <Link to={"/admin"} className="nav-link">
-                                    Admin Board
+                                <Link to={"/profile"} className="nav-link">
+                                    Admin Profile
                                 </Link>
                             </li>
                             <li className="nav-item" style={{marginLeft:"100px"}}>
@@ -95,8 +95,8 @@ const Header = () => {
                     {showBuyerBoard && (
                         <>
                             <li className="nav-item" >
-                                <Link to={"/buyer"} className="nav-link">
-                                    Buyer Board
+                                <Link to={"/profile"} className="nav-link">
+                                    Buyer Profile
                                 </Link>
                             </li>
                             <li className="nav-item" >
@@ -110,11 +110,11 @@ const Header = () => {
                 </div>
                 {currentUser ? (
                     <div className="navbar-nav ml-auto" >
-                        <li className="nav-item">
-                            <Link to={"/profile"} className="nav-link">
-                                {currentUser.username}
-                            </Link>
-                        </li>
+                        {/*<li className="nav-item">*/}
+                        {/*    <Link to={"/profile"} className="nav-link">*/}
+                        {/*        {currentUser.username}*/}
+                        {/*    </Link>*/}
+                        {/*</li>*/}
                         <li className="nav-item" style={{marginLeft:"500px"}}>
                             <a href="/login" className="nav-link" onClick={logOut}>
                                 LogOut
