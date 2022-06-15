@@ -40,7 +40,7 @@ const ProductDetails = (props) => {
     let productDetailDisplay = null;
     if (params.id) {
         productDetailDisplay =
-            <div style={{backgroundColor:"gray"}}>
+            <div style={{backgroundColor:"white"}}>
                 <div>
                     Product Detail
                 </div>
