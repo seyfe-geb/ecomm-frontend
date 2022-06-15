@@ -3,16 +3,16 @@ import authHeader from './auth-header';
 const API_URL = 'http://localhost:8080/api/miu/';
 class UserService {
     getPublicContent() {
-        return axios.get(API_URL + 'all');
+        return axios.get(API_URL + 'users/all');
     }
     getBuyerBoard() {
-        return axios.get(API_URL + 'buyer', { headers: authHeader() });
+        return axios.get(API_URL + 'users/buyer', { headers: authHeader() });
     }
     getSellerBoard() {
-        return axios.get(API_URL + 'seller', { headers: authHeader() });
+        return axios.get(API_URL + 'users/seller', { headers: authHeader() });
     }
     getAdminBoard() {
-        return axios.get(API_URL + 'admin', { headers: authHeader() });
+        return axios.get(API_URL + 'users/admin', { headers: authHeader() });
     }
     getProductById(pid) {
         return axios.get(API_URL + 'products/' + pid, { headers: authHeader() });
