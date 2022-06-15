@@ -24,6 +24,9 @@ class UserService {
     getBuyerOrders(id){
         return axios.get(API_URL + 'orders/buyer/' + id, {headers: authHeader()});
     }
+    getOrdersBySellerId(sid) {
+        return axios.get(API_URL + 'seller/orders/' + sid, { headers: authHeader() });
+    }
 
     getAllProducts() {
         return axios.get(API_URL + 'products');
