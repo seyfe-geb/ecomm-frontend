@@ -1,20 +1,15 @@
-import React, {Fragment, useContext, useEffect, useState} from 'react';
-import axios from "axios";
-import {Link, Redirect, useParams} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {useParams} from "react-router-dom";
 import {useNavigate} from 'react-router';
 import UserService from "../services/user.service";
-import {SetSelectedId} from "../store/SetSelectedId";
-import {SelectedId} from "../store/SelectedId";
 import AuthService from "../services/auth.service";
 
 const ProductDetails = (props) => {
     const [productDetail, setProductDetail] = useState({});
     const [checkoutButtonShow, setCheckoutButtonShow] = useState(false);
-    const product = UserService.getSelectedProduct();
     const currentUser = AuthService.getCurrentUser();
     const params = useParams();
     const navigate = useNavigate();
-    const setSelectedId = useContext(SetSelectedId);
 
     useEffect(() => {
         if(currentUser&&currentUser.roles[0]==='ROLE_BUYER'){
@@ -42,7 +37,6 @@ const ProductDetails = (props) => {
 
     };
 
-    const space = <Fragment>&nbsp;&nbsp;</Fragment>;
     let productDetailDisplay = null;
     if (params.id) {
         productDetailDisplay =

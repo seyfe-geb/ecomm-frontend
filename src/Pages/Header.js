@@ -45,12 +45,12 @@ const Header = () => {
                             </li>
                             <li className="nav-item">
                                 <Link to={"/sellerproducts"} className="nav-link">
-                                    All Products
+                                    My Products
                                 </Link>
                             </li>
                             <li className="nav-item" >
                                 <Link to={"/sellerorders"} className="nav-link">
-                                    Orders
+                                    My Orders
                                 </Link>
                             </li>
                         </>
@@ -96,7 +96,7 @@ const Header = () => {
                             </li>
                             <li className="nav-item" >
                                 <Link to={"/buyerorders"} className="nav-link">
-                                    Orders
+                                    My Orders
                                 </Link>
                             </li>
                         </>
