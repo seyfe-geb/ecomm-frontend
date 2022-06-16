@@ -38,7 +38,6 @@ const Checkout = (props) => {
                         Product Info<br/>
                         Price: {product.price}<br/>
                         Product Id : {product.id}<br/>
-                        User Id: {currentUser.id}<br/>
                         Quantity: <input
                                         type="number"
                                         value={quantity}
