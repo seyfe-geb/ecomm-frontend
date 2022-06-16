@@ -6,7 +6,6 @@ import {useNavigate} from "react-router";
 
 const BuyerOrderDetails = () => {
     const [orderDetail, setOrderDetail] = useState({});
-    const [productDetail, setProductDetail] = useState({});
     const params = useParams();
     const navigate = useNavigate();
 
