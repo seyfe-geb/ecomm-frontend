@@ -36,6 +36,9 @@ const AllBuyerDetails = () => {
                     </div>
                     <h3>First Name: {userDetail.firstName}</h3>
                     <h3>Last Name: {userDetail.lastName}</h3>
+                    <h3>Email: {userDetail.email}</h3>
+                    <h3>Enable: {userDetail.enabled}</h3>
+                    <h3>Approved Seller: {userDetail.approvedSeller}</h3>
                 </div>
 
     }

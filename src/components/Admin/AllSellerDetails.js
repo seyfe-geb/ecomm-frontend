@@ -15,7 +15,7 @@ const AllSellerDetails = () => {
                 .then(response => setUserDetail(response.data))
                 .catch(error => console.log("Error fetchinng data!"));
         }
-    }, [params.id]);
+    },[params.id]);
 
 
     let productDetailDisplay = null;
