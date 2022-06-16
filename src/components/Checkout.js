@@ -27,7 +27,7 @@ const Checkout = (props) => {
     }
     const cancelOperation = () =>{
         UserService.removeProduct();
-        navigate("/products");
+        window.open("/products","_self");
     }
 
     return (
